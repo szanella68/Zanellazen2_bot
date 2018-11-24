@@ -14,9 +14,6 @@ switch($text){
     case "/start":
         sendMessage($chatId,"Weyla!");
         break;
-    case "/tastiera":
-        sendMessage($chatId,"Test tastiera Inline!",$esempiotastierainline,"inline");
-        break;
     case "Bene":
         sendMessage($chatId,"Ottimo!");
         break;
@@ -31,12 +28,9 @@ switch($text){
 
   function sendMessage($chatId,$text,$tastiera,$tipo){
     if(isset($tastiera)){
-      if($tipo == "fisica"){
+ 
         $tastierino = '&reply_markup={"keyboard":['.urlencode($tastiera).'],"resize_keyboard":true}';
-      }
-      else {
-        $tastierino = '&reply_markup={"inline_keyboard":['.urlencode($tastiera).'],"resize_keyboard":true}';
-      }
+    
     }
     $url = $GLOBALS[website]."/sendMessage?chat_id=$chatId&parse_mode=HTML&text=".urlencode($text).$tastierino;
     file_get_contents($url);
