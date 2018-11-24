@@ -9,10 +9,9 @@
   $text = $update['message']['text'];
   $query = $update['callback_query'];
   
-   if(strpos($text,"+")!==false){
-          sendMessage($chatId,eval('return '.$text.';'));
-         exit();
-   }
+
+          sendMessage($chatId,"ciao");
+
    
      function sendMessage($chatId,$text){
       $url = $GLOBALS[website]."/sendMessage?chat_id=$chatId&text=".urlencode($text);
