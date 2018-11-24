@@ -9,7 +9,7 @@
   $text = $update['message']['text'];
  
   $agg = json_encode($update,JSON_PRETTY_PRINT);
-
+  $tastierabenvenuto = '["bene"],["tu?"],["'.$nome.'"]';
 switch($text){
     case "/start":
         sendMessage($chatId,"Weyla!");
@@ -21,15 +21,13 @@ switch($text){
         sendMessage($chatId,"Eh... Sono ancora in via di sviluppo!");
         break;
     default:
-      $tastierabenvenuto = '["bene"],["tu?"],["'.$nome.'"]';
-      sendMessage($chatId,"Ciao <b>$nome</b>! Come stai?",$tastierabenvenuto);
+          sendMessage($chatId,"Ciao <b>$nome</b>! Come stai?",$tastierabenvenuto);
       break;
   }
 
   function sendMessage($chatId,$text,$tastiera){
     if(isset($tastiera)){
          $tastierino = '&reply_markup={"keyboard":['.$tastiera.'],"resize_keyboard":true}';
-    
     }
     $url = $GLOBALS[website]."/sendMessage?chat_id=$chatId&parse_mode=HTML&text=".urlencode($text).$tastierino;
     file_get_contents($url);
