@@ -5,16 +5,15 @@
   $update = json_decode($update, TRUE);
   
   $chatId = $update['message']['from']['id'];
-  $nome = $update['message']['from']['first_name'];
   $text = $update['message']['text'];
-  $query = $update['callback_query'];
+ 
   
 
           sendMessage($chatId,"ciao");
 
    
      function sendMessage($chatId,$text){
-      $url = $GLOBALS[website]."/sendMessage?chat_id=$chatId&text=".urlencode($text);
+      $url = $GLOBALS[$website]."/sendMessage?chat_id=$chatId&text=".urlencode($text);
       file_get_contents($url);
      }
      
