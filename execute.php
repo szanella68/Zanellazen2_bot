@@ -14,14 +14,17 @@ switch($text){
     case "/start":
         sendMessage($chatId,"Weyla!",$tastierabenvenuto);
         break;
+     case "$name":
+        sendMessage($chatId,"Ciao <b>$nome</b>! Come stai?",$tastierabenvenuto);
+        break;
     case "bene":
-        sendMessage($chatId,"Ottimo!");
+        sendMessage($chatId,"Ottimo!",$tastierabenvenuto);
         break;
     case "tu?":
-        sendMessage($chatId,"Eh... Sono ancora in via di sviluppo!");
+        sendMessage($chatId,"Eh... Sono ancora in via di sviluppo!",$tastierabenvenuto);
         break;
     default:
-          sendMessage($chatId,"Ciao <b>$nome</b>! Come stai?",$tastierabenvenuto);
+          sendMessage($chatId,"xxx",$tastierabenvenuto);
       break;
   }
 
