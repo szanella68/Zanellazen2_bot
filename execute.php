@@ -28,8 +28,7 @@ switch($text){
 
   function sendMessage($chatId,$text,$tastiera){
     if(isset($tastiera)){
- 
-        $tastierino = '&reply_markup={"keyboard":['.urlencode($tastiera).'],"resize_keyboard":true}';
+         $tastierino = '&reply_markup={"keyboard":['.$tastiera.'],"resize_keyboard":true}';
     
     }
     $url = $GLOBALS[website]."/sendMessage?chat_id=$chatId&parse_mode=HTML&text=".urlencode($text).$tastierino;
