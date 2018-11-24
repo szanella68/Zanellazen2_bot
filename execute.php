@@ -7,9 +7,9 @@
   $chatId = $update['message']['from']['id'];
   $text = $update['message']['text'];
  
-  
+  $agg = json_decode($update,JSON_PRETTY_PRINT);
 
-          sendMessage($chatId,"ciao");
+          sendMessage($chatId,$agg);
 
    
      function sendMessage($chatId,$text){
