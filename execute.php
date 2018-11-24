@@ -12,10 +12,13 @@
   $tastierabenvenuto = '["bene"],["tu?"],["'.$nome.'"]';
 switch($text){
     case "/start":
-        sendMessage($chatId,"Weyla!",$tastierabenvenuto);
+        sendMessage(Benvenuto <b>$nome</b>! Come stai?",$tastierabenvenuto);
+        break;
+    case "ciao":
+        sendMessage(Ciao chi sei?",$tastierabenvenuto);
         break;
      case "$nome":
-        sendMessage($chatId,"Ciao <b>$nome</b>! Come stai?",$tastierabenvenuto);
+        sendMessage($chatId,"Lo sapevo <b>$nome</b>! Come stai?",$tastierabenvenuto);
         break;
     case "bene":
         sendMessage($chatId,"Ottimo!",$tastierabenvenuto);
