@@ -22,11 +22,11 @@ switch($text){
         break;
     default:
       $tastierabenvenuto = '["Bene"],["Tu?"],["'.$nome.'"]';
-      sendMessage($chatId,"Ciao <b>$nome</b>! Come stai?",$tastierabenvenuto,"fisica");
+      sendMessage($chatId,"Ciao <b>$nome</b>! Come stai?",$tastierabenvenuto);
       break;
   }
 
-  function sendMessage($chatId,$text,$tastiera,$tipo){
+  function sendMessage($chatId,$text,$tastiera){
     if(isset($tastiera)){
  
         $tastierino = '&reply_markup={"keyboard":['.urlencode($tastiera).'],"resize_keyboard":true}';
