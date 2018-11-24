@@ -5,7 +5,7 @@
   $update = json_decode($update, TRUE);
   
   $chatId = $update['message']['from']['id'];
-  $nome = $update['message']['from']['first_name']
+  $nome = $update['message']['from']['first_name'];
   $text = $update['message']['text'];
  
   $agg = json_encode($update,JSON_PRETTY_PRINT);
