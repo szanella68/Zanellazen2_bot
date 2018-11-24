@@ -1,5 +1,5 @@
 ?php
-  include 'Token.php';
+  include 'token.php';
   $update = file_get_contents('php://input');
   $update = json_decode($update, TRUE);
   
