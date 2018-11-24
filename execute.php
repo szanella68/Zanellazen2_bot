@@ -10,13 +10,37 @@
  
   $agg = json_encode($update,JSON_PRETTY_PRINT);
 
-          sendMessage($chatId,"ciao $nome come stai?");
+switch($text){
+    case "/start":
+        sendMessage($chatId,"Weyla!");
+        break;
+    case "/tastiera":
+        sendMessage($chatId,"Test tastiera Inline!",$esempiotastierainline,"inline");
+        break;
+    case "Bene":
+        sendMessage($chatId,"Ottimo!");
+        break;
+    case "Tu?":
+        sendMessage($chatId,"Eh... Sono ancora in via di sviluppo!");
+        break;
+    default:
+      $tastierabenvenuto = '["Bene"],["Tu?"],["'.$nome.'"]';
+      sendMessage($chatId,"Ciao <b>$nome</b>! Come stai?",$tastierabenvenuto,"fisica");
+      break;
+  }
 
-   
-     function sendMessage($chatId,$text){
-      $url = $GLOBALS[website]."/sendMessage?chat_id=$chatId&text=".urlencode($text);
-      file_get_contents($url);
-     }
+  function sendMessage($chatId,$text,$tastiera,$tipo){
+    if(isset($tastiera)){
+      if($tipo == "fisica"){
+        $tastierino = '&reply_markup={"keyboard":['.urlencode($tastiera).'],"resize_keyboard":true}';
+      }
+      else {
+        $tastierino = '&reply_markup={"inline_keyboard":['.urlencode($tastiera).'],"resize_keyboard":true}';
+      }
+    }
+    $url = $GLOBALS[website]."/sendMessage?chat_id=$chatId&parse_mode=HTML&text=".urlencode($text).$tastierino;
+    file_get_contents($url);
+  }
      
  ?>
    
