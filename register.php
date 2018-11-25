@@ -1,6 +1,6 @@
 <?php
 // PARAMETRI DA MODIFICARE
-$WEBHOOK_URL = 'https://zanellazenbot2.herokuapp.com/execute.php';
+$WEBHOOK_URL = 'https://zanellazen2bot.herokuapp.com/execute.php';
 $BOT_TOKEN = '681369794:AAGuUAUjHDGAOsmo3GXX7VSdO9E5-OTISYE';
 // NON APPORTARE MODIFICHE NEL CODICE SEGUENTE
 $API_URL = 'https://api.telegram.org/bot' . $BOT_TOKEN .'/';
